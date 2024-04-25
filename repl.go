@@ -8,29 +8,31 @@ import (
 )
 
 func startRepl() {
-	scanner := bufio.NewScanner(os.Stdin)
+	reader := bufio.NewScanner(os.Stdin)
 
 	for {
-		fmt.Print(">")
+		fmt.Print("Pokedex > ")
+		reader.Scan()
 
-		scanner.Scan()
-		text := scanner.Text()
+		words := cleanInput(reader.Text())
 
-		cleaned := cleanInput(text)
-		if len(cleaned) == 0 {
+		if len(words) == 0 {
 			continue
 		}
 
-		commandName := cleaned[0]
+		commandName := words[0]
 
-		availableCommands := getCommands()
-
-		command, ok := availableCommands[commandName] 
-		if !ok {
-			fmt.Println("invalid command")
+		command, exists := getCommands()[commandName]
+		if exists {
+			err := command.callback()
+			if err != nil {
+				fmt.Println(err)
+			}
+			continue
+		} else {
+			fmt.Println("Invalid command")
 			continue
 		}
-		command.callback()
 	}
 }
 
