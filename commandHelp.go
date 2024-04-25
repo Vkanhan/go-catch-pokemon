@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func callbackHelp() {
+func callbackHelp()error {
 	fmt.Println("Welcome to the pokedox help menu!")
 	fmt.Println("Here are the available commands")
 
@@ -11,4 +11,5 @@ func callbackHelp() {
 		fmt.Printf("- %s: %s\n", cmd.name, cmd.description)
 	}
 	fmt.Println("")
+	return nil
 }
