@@ -33,7 +33,9 @@ func startRepl(cfg *config) {
 			fmt.Println("Invalid command")
 			continue
 		}
+		
 	}
+	
 }
 
 type cliCommand struct {
@@ -52,13 +54,13 @@ func getCommands()map[string]cliCommand {
 		"map": {
 			name : "map",
 			description: "Get the next page of locations",
-			callback: callbackMap,
+			callback: commandMap,
 		},
-		// "mapb": {
-		// 	name : "mapb",
-		// 	description: "Get the previous page of locations",
-		// 	callback: commandMapb,
-		// },
+		"mapb": {
+			name : "mapb",
+			description: "Get the previous page of locations",
+			callback: commandMapb,
+		},
 		"exit": {
 			name : "exit",
 			description : "Turns off the pokedox",
