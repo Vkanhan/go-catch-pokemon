@@ -10,7 +10,7 @@ import (
 const baseURL = "https://pokeapi.co/api/v2"
 
 type Client struct {
-	cache      pokecache.Cacheinternal/pokeapi/pokeapi.go
+	cache      pokecache.Cache
 	httpClient http.Client
 }
 
