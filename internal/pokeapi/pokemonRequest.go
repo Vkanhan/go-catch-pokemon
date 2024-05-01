@@ -22,7 +22,7 @@ func (c *Client) GetPokemon(pokemonName string) (Pokemon, error) {
 			return Pokemon{}, err
 		}
 
-		return Pokemon{}, nil
+		return pokemon, nil
 	}
 	fmt.Println("cache miss")
 
