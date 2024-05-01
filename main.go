@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/Vkanhan/go-pokedox/internal/pokeapi"
+	"github.com/Vkanhan/go-catch-pokemon/internal/pokeapi"
 )
 
 type config struct {
