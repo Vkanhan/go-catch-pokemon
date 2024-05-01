@@ -1,3 +1,3 @@
-module github.com/Vkanhan/go-pokedox
+module github.com/Vkanhan/go-catch-pokemon
 
 go 1.22.2
